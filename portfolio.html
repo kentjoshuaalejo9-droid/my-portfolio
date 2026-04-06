@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kent Alejo | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+  <div class="nav-container">
+    <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="logo">
+      <img src="assets/kentlogo.png" alt="Kent Alejo Logo" />
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
+          <span class="icon">&#x2600;&#xFE0F;</span>
+          <span>Light</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio">
+    <p class="header">SDASDASD</p>
+  </section>
+
+
+	<footer>
+		<img src="assets/kentlogo.png" alt="KA Logo" class="footer-logo">
+		<div class="footer-container">
+		  <p class="footer-copy">
+			&copy; 2026 <span>Kent Alejo</span>. All Rights Reserved.
+		  </p>
+		  <div class="footer-social">
+			<a href="https://www.facebook.com/share/1J2FxMRugB/" target="_blank" title="Facebook">
+			  <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
+				<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+			  </svg>
+			</a>
+			<a href="https://www.instagram.com/3nt._k?igsh=MWI5YTA0Ym8wZHk2bg==" target="_blank" title="Instagram">
+			  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+				<circle cx="12" cy="12" r="4"/>
+				<circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+			  </svg>
+			</a>
+			<a href="https://www.linkedin.com/in/kent-joshua-alejo-45b6983bb" target="_blank" title="LinkedIn">
+			  <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
+				<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+				<rect x="2" y="9" width="4" height="12"/>
+				<circle cx="4" cy="4" r="2"/>
+			  </svg>
+			</a>
+			<a href="mailto:kentjoshuaalejo9@gmail.com" title="Gmail">
+			  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+				<polyline points="22,6 12,13 2,6"/>
+			  </svg>
+			</a>
+		  </div>
+		</div>
+	</footer>
+
+  
+  
+  <script>
+	const btn = document.getElementById('theme-btn');
+
+    function applyTheme(mode) {
+      if (mode === 'light') {
+        document.body.classList.add('light-mode');
+        btn.innerHTML = '<span class="icon">🌙</span><span>Dark</span>';
+      } else {
+        document.body.classList.remove('light-mode');
+        btn.innerHTML = '<span class="icon">☀️</span><span>Light</span>';
+      }
+      localStorage.setItem('theme', mode);
+    }
+
+    function toggleTheme() {
+      const current = localStorage.getItem('theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    /* Apply saved theme on load */
+    applyTheme(localStorage.getItem('theme') || 'dark');
+  </script>
+
+
+</body>
+</html>

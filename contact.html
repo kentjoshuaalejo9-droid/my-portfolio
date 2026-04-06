@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kent Alejo | Contact</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="logo">
+      <img src="assets/kentlogo.png" alt="Kent Alejo Logo" />
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
+          <span class="icon">&#x2600;&#xFE0F;</span>
+          <span>Light</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="contact-container contact-fadein">
+
+      <!-- LEFT -->
+      <div class="contact-left">
+        <h1>Contact <span class="contact-accent">Me</span></h1>
+        <p class="contact-tagline">Let's work together</p>
+        <p class="contact-desc">
+          I'm glad you've visited my personal portfolio website! If you
+          have any questions, suggestions, or would like to collaborate,
+          please feel free to contact me through this form. I usually
+          reply within 24 hours.
+        </p>
+
+        <div class="contact-info">
+          <a href="mailto:kentjoshuaalejo9@gmail.com" class="contact-info-item">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            kentjoshuaalejo9@gmail.com
+          </a>
+          <a href="tel:+639186308710" class="contact-info-item">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            09186308710
+          </a>
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://www.facebook.com/share/1J2FxMRugB/" target="_blank" title="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/3nt._k?igsh=MWI5YTA0Ym8wZHk2bg==" target="_blank" title="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/kent-joshua-alejo-45b6983bb" target="_blank" title="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="none">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="mailto:kentjoshuaalejo9@gmail.com" title="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT (Form) -->
+      <div class="contact-right">
+        <form id="contact-form" class="contact-form">
+          <input type="text"  class="contact-input" id="name"    name="name"    placeholder="Enter Your Name"    autocomplete="name"    required />
+          <input type="email" class="contact-input" id="email"   name="email"   placeholder="Enter Your Email"   autocomplete="email"   required />
+          <input type="text"  class="contact-input" id="subject" name="subject" placeholder="Enter Your Subject" autocomplete="off"     />
+          <textarea           class="contact-input contact-textarea" id="message" name="message" placeholder="Enter Your Message" required></textarea>
+          <button type="submit" class="contact-btn" id="submit-btn">
+            <span id="btn-text">Submit</span>
+            <span id="btn-spinner" class="btn-spinner" style="display:none;">&#9696;</span>
+          </button>
+        </form>
+        <p id="form-status" class="form-status"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+	<img src="assets/kentlogo.png" alt="KA Logo" class="footer-logo">
+	<div class="footer-container">
+	  <p class="footer-copy">
+        &copy; 2026 <span>Kent Alejo</span>. All Rights Reserved.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/1J2FxMRugB/" target="_blank" title="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/3nt._k?igsh=MWI5YTA0Ym8wZHk2bg==" target="_blank" title="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kent-joshua-alejo-45b6983bb" target="_blank" title="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="mailto:kentjoshuaalejo9@gmail.com" title="Gmail">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const btn = document.getElementById('theme-btn');
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      btn.innerHTML = isLight
+        ? '<span class="icon">&#x1F319;</span><span>Dark</span>'
+        : '<span class="icon">&#x2600;&#xFE0F;</span><span>Light</span>';
+    }
+
+    const form     = document.getElementById('contact-form');
+    const status   = document.getElementById('form-status');
+    const btn      = document.getElementById('submit-btn');
+    const btnText  = document.getElementById('btn-text');
+    const spinner  = document.getElementById('btn-spinner');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      btnText.textContent = 'Sending...';
+      spinner.style.display = 'inline-block';
+      btn.disabled = true;
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch('https://formspree.io/f/xzdkgzpa', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          status.textContent = 'Message sent! Thank you. I will reply within 24 hours.';
+          status.style.color = '#22c55e';
+          form.reset();
+        } else {
+          status.textContent = 'Oops! Something went wrong. Please try again.';
+          status.style.color = '#ef4444';
+        }
+      } catch (error) {
+        status.textContent = 'Oops! Something went wrong. Please try again.';
+        status.style.color = '#ef4444';
+      }
+
+      btnText.textContent = 'Submit';
+      spinner.style.display = 'none';
+      btn.disabled = false;
+
+      setTimeout(function () {
+        status.textContent = '';
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>
