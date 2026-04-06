@@ -235,6 +235,16 @@
 
     /* Apply saved theme on load */
     applyTheme(localStorage.getItem('theme') || 'dark');
+
+	/* ── Hamburger menu ── */
+	function toggleMenu() {
+	  const nav = document.getElementById('nav-links');
+	  const btn = document.getElementById('hamburger-btn');
+	  nav.classList.toggle('open');
+	  btn.classList.toggle('active');
+	 }
+  
+  
   </script>
 
 </body>
