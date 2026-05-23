@@ -5,111 +5,368 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kent Alejo | Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #particles-portfolio {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body>
+<body class="page-fadein">
 
   <!-- NAVIGATION -->
   <nav>
-  <div class="nav-container">
-    <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="logo">
-      <img src="assets/kentlogo.png" alt="Kent Alejo Logo" />
+    <div class="nav-container">
+      <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo">
+        <img src="assets/kentlogo.png" alt="Kent Alejo Logo" />
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
+            <span class="icon">&#x2600;&#xFE0F;</span><span>Light</span>
+          </button>
+        </li>
+      </ul>
     </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li>
-        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
-          <span class="icon">&#x2600;&#xFE0F;</span>
-          <span>Light</span>
-        </button>
-      </li>
-    </ul>
-  </div>
-</nav>
+  </nav>
 
   <!-- PORTFOLIO SECTION -->
-  <section id="portfolio">
-    <p class="header">SDASDASD</p>
+  <section id="portfolio" style="position: relative;">
+    <canvas id="particles-portfolio"></canvas>
+    <div class="portfolio-wrapper">
+      <div class="portfolio-header">
+        <p class="portfolio-tag">My Work</p>
+        <h2>MY <span class="blue">PROJECTS</span></h2>
+        <p class="portfolio-sub">A collection of things I've built and designed.</p>
+      </div>
+
+      <div class="portfolio-tabs" id="main-tabs">
+        <button class="tab-btn active" data-tab="poster">Poster</button>
+        <button class="tab-btn" data-tab="graphic">Graphic Design</button>
+        <button class="tab-btn" data-tab="ui">UI Design</button>
+        <button class="tab-btn" data-tab="programming">Programming</button>
+      </div>
+
+      <div class="carousel-section">
+        <button class="carousel-arrow left" id="prev-btn">&#8249;</button>
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track" id="carousel-track"></div>
+        </div>
+        <button class="carousel-arrow right" id="next-btn">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+
+      <!-- DEMO REEL -->
+      <div class="demo-reel-section">
+        <p class="portfolio-tag" style="margin: 0 auto 12px;">Demo Reel</p>
+        <h3 class="demo-reel-title">MY <span class="blue">DEMO REEL</span></h3>
+        <div class="demo-reel-wrapper">
+          <div class="demo-reel-wrapper">
+            <video class="demo-reel-video" controls muted preload="metadata">
+              <source src="assets/demo-reel.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-tabs cert-tabs" id="cert-tabs">
+        <button class="tab-btn cert-tab active-cert">Certification</button>
+      </div>
+
+      <div class="carousel-section">
+        <button class="carousel-arrow left" id="cert-prev-btn">&#8249;</button>
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track" id="cert-carousel-track"></div>
+        </div>
+        <button class="carousel-arrow right" id="cert-next-btn">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="cert-dots"></div>
+    </div>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img src="" alt="" id="lightbox-img" />
+      <div class="lightbox-info">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
 
-	<footer>
-		<img src="assets/kentlogo.png" alt="KA Logo" class="footer-logo">
-		<div class="footer-container">
-		  <p class="footer-copy">
-			&copy; 2026 <span>Kent Alejo</span>. All Rights Reserved.
-		  </p>
-		  <div class="footer-social">
-			<a href="https://www.facebook.com/share/1J2FxMRugB/" target="_blank" title="Facebook">
-			  <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
-				<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-			  </svg>
-			</a>
-			<a href="https://www.instagram.com/3nt._k?igsh=MWI5YTA0Ym8wZHk2bg==" target="_blank" title="Instagram">
-			  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-				<circle cx="12" cy="12" r="4"/>
-				<circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.7)" stroke="none"/>
-			  </svg>
-			</a>
-			<a href="https://www.linkedin.com/in/kent-joshua-alejo-45b6983bb" target="_blank" title="LinkedIn">
-			  <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
-				<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-				<rect x="2" y="9" width="4" height="12"/>
-				<circle cx="4" cy="4" r="2"/>
-			  </svg>
-			</a>
-			<a href="mailto:kentjoshuaalejo9@gmail.com" title="Gmail">
-			  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-				<polyline points="22,6 12,13 2,6"/>
-			  </svg>
-			</a>
-		  </div>
-		</div>
-	</footer>
+  <!-- FOOTER -->
+  <footer>
+    <img src="assets/kentlogo.png" alt="KA Logo" class="footer-logo">
+    <div class="footer-container">
+      <p class="footer-copy">&copy; 2026 <span>Kent Alejo</span>. All Rights Reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/1J2FxMRugB/" target="_blank" title="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/3nt._k?igsh=MWI5YTA0Ym8wZHk2bg==" target="_blank" title="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.7)" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/kent-joshua-alejo-45b6983bb" target="_blank" title="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:kentjoshuaalejo9@gmail.com" title="Gmail">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 
-  
-  
   <script>
-	const btn = document.getElementById('theme-btn');
+    /* ── Particles ── */
+    (function () {
+      const canvas  = document.getElementById('particles-portfolio');
+      const ctx     = canvas.getContext('2d');
+      const section = document.getElementById('portfolio');
+      let particles = [];
+      const COUNT   = 55;
 
-    function applyTheme(mode) {
-      if (mode === 'light') {
-        document.body.classList.add('light-mode');
-        btn.innerHTML = '<span class="icon">🌙</span><span>Dark</span>';
-      } else {
-        document.body.classList.remove('light-mode');
-        btn.innerHTML = '<span class="icon">☀️</span><span>Light</span>';
+      function resize() {
+        canvas.width  = section.offsetWidth;
+        canvas.height = section.offsetHeight;
       }
+
+      function randomParticle() {
+        return {
+          x:     Math.random() * canvas.width,
+          y:     Math.random() * canvas.height,
+          r:     Math.random() * 2 + 0.5,
+          dx:    (Math.random() - 0.5) * 0.4,
+          dy:    (Math.random() - 0.5) * 0.4,
+          alpha: Math.random() * 0.5 + 0.1
+        };
+      }
+
+      function init() {
+        resize();
+        particles = Array.from({ length: COUNT }, randomParticle);
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(59, 130, 246, ${p.alpha})`;
+          ctx.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        });
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(59, 130, 246, ${0.12 * (1 - dist / 120)})`;
+              ctx.lineWidth   = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', init);
+      init();
+      draw();
+    })();
+
+    const tabData = {
+      poster: [
+        { title: 'BOTB Poster',                desc: 'Battle of the Bands event promotion poster.', img: 'assets/botb.jfif',      imgAlt: 'BOTB' },
+        { title: 'Hataw Sayaw Poster',          desc: 'Hataw Sayang event promotion poster.',        img: 'assets/sayaw.jfif',     imgAlt: 'Hataw Sayaw' },
+        { title: 'Breath of the Future Poster', desc: 'A poster about our mother Earth.',            img: 'assets/earth.jfif',     imgAlt: 'Earth' }
+      ],
+      graphic: [
+        { title: 'T-shirt Mock Up',    desc: 'T-shirt mock up for my past client.',              img: 'assets/tshirt.png', imgAlt: 'T-shirt Mock Up' },
+        { title: 'Zip-Lock Mock Up',   desc: 'A customize Zip Lock mock up for my past client.', img: 'assets/zip.png',    imgAlt: 'Zip Lock Mock Up' },
+        { title: 'Brand Card Mock Up', desc: 'A customize Brand Card for my past client.',       img: 'assets/bcard.png',  imgAlt: 'Brand Card' }
+      ],
+      ui: [
+        { title: 'Mobile App UI', desc: 'A mobile app UI for a hospital.',      img: 'assets/phone.png',    imgAlt: 'Mobile App UI' },
+        { title: 'Desktop UI',    desc: 'A desktop UI for my client.',          img: 'assets/desktop.png',  imgAlt: 'Dashboard Design' },
+        { title: 'PLV UI Design', desc: 'PLV website UI mockup and prototype.', img: 'assets/desktop2.png', imgAlt: 'Landing Page' }
+      ],
+      programming: [
+        { title: 'Portfolio Website',   desc: 'Personal portfolio built with HTML/CSS/JS.', img: 'assets/port.jfif',      imgAlt: 'Portfolio Website' },
+        { title: 'Origami Website',     desc: 'A website for Origami.',                     img: 'assets/origami.jfif',   imgAlt: 'Origami Website' },
+        { title: 'Blood Donation Bank', desc: 'A prototype system for Blood Donation Bank.',img: 'assets/bloodbank.jfif', imgAlt: 'Blood Donation Bank' }
+      ]
+    };
+
+    const certData = [
+      { title: 'Exploring IoT',                 desc: 'Cisco Certificate, Aug 25, 2025.',                 img: 'assets/exploring-iot.jfif',      imgAlt: 'Certificate 1' },
+      { title: 'Getting Started in Cisco',      desc: 'Cisco Certificate, Aug 22, 2025.',                 img: 'assets/started-cisco.jfif',      imgAlt: 'Certificate 2' },
+      { title: 'Introduction to Cisco',         desc: 'Cisco certificate, August 30, 2025.',              img: 'assets/intro-packet.jfif',       imgAlt: 'Certificate 3' },
+      { title: 'Exploring Networking in Cisco', desc: 'Cisco certificate, August 22, 2025.',              img: 'assets/explore-networking.jfif', imgAlt: 'Certificate 4' },
+      { title: 'Introduction to MySQL',         desc: 'SimpliLearn MySQL Certification, April 17, 2025.', img: 'assets/intro-sql.jfif',          imgAlt: 'Certificate 5' },
+      { title: 'Seminar in LLMS',         		desc: 'Seminar, April 23, 2024.', 						  img: 'assets/1.png',          		 imgAlt: 'Certificate 6' },
+      { title: 'Seminar in Cybersecurity',      desc: 'Cybersecurity Seminar, April 23, 2024.', 		  img: 'assets/2.png',          		 imgAlt: 'Certificate 7' },
+      { title: 'Seminar in Open Source Innovation',   desc: 'Open Source Innovation Seminar, April 23, 2024.', img: 'assets/3.png',      		 imgAlt: 'Certificate 8' },
+      { title: 'Seminar in Project Management', desc: 'Project Management Seminar, April 23, 2024.', 		  img: 'assets/4.png',          	 imgAlt: 'Certificate 9' },
+	  { title: 'CodeSignal Certificate', desc: 'Descriptive and Inferential Statistics with Phyton, April 21, 2026.', 		  img: 'assets/certificate (1).png', imgAlt: 'Certificate 9' }
+
+	
+	
+	];
+
+    function createCarousel(trackId, dotsId, prevId, nextId, data, isCert, autoDelay) {
+      const track         = document.getElementById(trackId);
+      const dotsContainer = document.getElementById(dotsId);
+      let current         = 0;
+      let autoTimer       = null;
+
+      function buildCard(item) {
+        const tagClass = isCert ? 'card-tag cert-label' : 'card-tag';
+        const tagText  = isCert ? 'Certification' : item.title.split(' ')[0];
+        const imgHtml  = item.img
+          ? `<img src="${item.img}" alt="${item.imgAlt}" style="width:100%;height:100%;object-fit:cover;display:block;">`
+          : `<svg viewBox="0 0 48 48" fill="none" width="40" height="40"><rect x="6" y="6" width="36" height="36" rx="4" stroke="#3B82F6" stroke-width="2"/><circle cx="18" cy="18" r="4" stroke="#3B82F6" stroke-width="2"/><path d="M6 32l10-8 8 7 6-5 12 9" stroke="#3B82F6" stroke-width="2" stroke-linejoin="round"/></svg><p>Placeholder</p>`;
+        return `
+          <div class="project-card${isCert ? ' cert-card' : ''}"
+               data-title="${item.title}" data-desc="${item.desc}"
+               data-img="${item.img || ''}" data-imgalt="${item.imgAlt}"
+               onclick="openLightbox(this)">
+            <div class="card-img-placeholder${isCert ? ' cert-placeholder' : ''}">${imgHtml}</div>
+            <div class="card-info">
+              <h3>${item.title}</h3>
+              <p>${item.desc}</p>
+              <span class="${tagClass}">${tagText}</span>
+            </div>
+          </div>`;
+      }
+
+      track.innerHTML = data.map(buildCard).join('');
+      const cards = track.querySelectorAll('.project-card');
+      const total = cards.length;
+
+      dotsContainer.innerHTML = '';
+      data.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function update() {
+        cards.forEach((card, i) => {
+          card.classList.remove('center', 'side', 'hidden-card');
+          const off = i - current;
+          if (off === 0)                card.classList.add('center');
+          else if (Math.abs(off) === 1) card.classList.add('side');
+          else                          card.classList.add('hidden-card');
+        });
+        dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+
+      function goTo(index) { current = (index + total) % total; update(); }
+      function startAuto() { stopAuto(); autoTimer = setInterval(() => goTo(current + 1), autoDelay); }
+      function stopAuto()  { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+
+      document.getElementById(prevId).addEventListener('click', () => { goTo(current - 1); startAuto(); });
+      document.getElementById(nextId).addEventListener('click', () => { goTo(current + 1); startAuto(); });
+
+      update();
+      startAuto();
+      return { reset: () => { current = 0; update(); startAuto(); }, stop: stopAuto };
+    }
+
+    function openLightbox(card) {
+      const img = card.dataset.img;
+      if (!img) return;
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.src = img;
+      lbImg.alt = card.dataset.imgalt;
+      document.getElementById('lightbox-title').textContent = card.dataset.title;
+      document.getElementById('lightbox-desc').textContent  = card.dataset.desc;
+      lbImg.classList.remove('lb-zoom-active');
+      void lbImg.offsetWidth;
+      lbImg.classList.add('lb-zoom-active');
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    let activeTab    = 'poster';
+    let mainCarousel = createCarousel('carousel-track', 'carousel-dots', 'prev-btn', 'next-btn', tabData[activeTab], false, 3000);
+    const certCarousel = createCarousel('cert-carousel-track', 'cert-dots', 'cert-prev-btn', 'cert-next-btn', certData, true, 3500);
+
+    document.querySelectorAll('#main-tabs .tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#main-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTab = btn.dataset.tab;
+        mainCarousel.stop();
+        mainCarousel = createCarousel('carousel-track', 'carousel-dots', 'prev-btn', 'next-btn', tabData[activeTab], false, 3000);
+      });
+    });
+
+    const themeBtn = document.getElementById('theme-btn');
+    function applyTheme(mode) {
+      if (mode === 'light') { document.body.classList.add('light-mode'); themeBtn.innerHTML = '<span class="icon">🌙</span><span>Dark</span>'; }
+      else { document.body.classList.remove('light-mode'); themeBtn.innerHTML = '<span class="icon">☀️</span><span>Light</span>'; }
       localStorage.setItem('theme', mode);
     }
-
-    function toggleTheme() {
-      const current = localStorage.getItem('theme') || 'dark';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    }
-
-    /* Apply saved theme on load */
+    function toggleTheme() { applyTheme(localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'); }
     applyTheme(localStorage.getItem('theme') || 'dark');
 
-		/* ── Hamburger menu ── */
-	function toggleMenu() {
-	  const nav = document.getElementById('nav-links');
-	  const btn = document.getElementById('hamburger-btn');
-	  nav.classList.toggle('open');
-	  btn.classList.toggle('active');
-	 }
-  
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+      document.getElementById('hamburger-btn').classList.toggle('active');
+    }
+	
+	/* ── Navbar scroll effect ── */
+	window.addEventListener('scroll', () => {
+	  const nav = document.querySelector('nav');
+	  if (window.scrollY > 10) {
+		nav.style.boxShadow = '0 4px 24px rgba(59,130,246,0.15)';
+		nav.style.backdropFilter = 'blur(10px)';
+		nav.style.background = 'rgba(17,17,17,0.85)';
+	  } else {
+		nav.style.boxShadow = '';
+		nav.style.backdropFilter = '';
+		nav.style.background = '';
+	  }
+	});
+	
+	/* ── Page Transition ── */
+	document.querySelectorAll('a[href]').forEach(link => {
+	  const href = link.getAttribute('href');
+	  if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('http')) return;
+	  link.addEventListener('click', e => {
+		e.preventDefault();
+		document.body.classList.add('page-exit');
+		setTimeout(() => { window.location.href = href; }, 380);
+	  });
+	});
   </script>
-
-
 </body>
 </html>
