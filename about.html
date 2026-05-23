@@ -5,175 +5,307 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kent Alejo | About</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #particles-about {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body>
-
+<body class="page-fadein">
   <!-- NAVIGATION -->
-<nav>
-  <div class="nav-container">
-    <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="logo">
-      <img src="assets/kentlogo.png" alt="Kent Alejo Logo" />
+  <nav>
+    <div class="nav-container">
+      <button class="hamburger" id="hamburger-btn" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo">
+        <img src="assets/kentlogo.png" alt="Kent Alejo Logo" />
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
+            <span class="icon">&#x2600;&#xFE0F;</span>
+            <span>Light</span>
+          </button>
+        </li>
+      </ul>
     </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li>
-        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
-          <span class="icon">&#x2600;&#xFE0F;</span>
-          <span>Light</span>
-        </button>
-      </li>
-    </ul>
-  </div>
-</nav>
+  </nav>
 
   <!-- ABOUT SECTION -->
-  <section id="about">
+  <section id="about" style="position: relative;">
+    <canvas id="particles-about"></canvas>
     <div class="about-container">
-
-      <!-- Left Side: Photo -->
       <div class="about-photo">
         <img src="assets/kent.jfif" alt="Kent Alejo" />
+        <a href="assets/Alejo-CV.pdf" download="Alejo-CV.pdf" class="btn-cv">
+          <span class="btn-cv-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </span>
+          <span class="btn-cv-text">
+            <span class="btn-cv-label">Download CV</span>
+            <span class="btn-cv-sub">PDF · Curriculum Vitae</span>
+          </span>
+        </a>
       </div>
-
-      <!-- Right Side: Text -->
       <div class="about-text">
-
         <p class="about-tag">About Me</p>
-
         <h2>HI, I'M KENT — A <span class="blue">PASSIONATE</span> DEVELOPER</h2>
-
         <p class="about-intro">
           Hi, I'm Kent, a passionate student interested in technology, creativity,
           and problem-solving. I enjoy building projects that allow me to learn new
           skills and create meaningful solutions.
         </p>
-
         <p class="about-background">
           I am currently studying and developing my skills in technology and digital
           creation. Through different projects and activities, I continue improving
           my knowledge and practical experience.
         </p>
-
-        <!-- Skills -->
         <div class="about-skills">
           <p class="skills-label">Skills:</p>
           <div class="skills-list">
             <span class="skill-item">Editing</span>
             <span class="skill-item">HTML / CSS</span>
             <span class="skill-item">UI Design</span>
-			<span class="skill-item">MySQL Database</span>
-			<span class="skill-item">Networking</span>
+            <span class="skill-item">MySQL Database</span>
+            <span class="skill-item">Networking</span>
           </div>
         </div>
+		
+		<div class="skill-bars">
+		  <div class="skill-bar-item">
+			<div class="skill-bar-header">
+			  <span class="skill-bar-label">HTML / CSS</span>
+			  <span class="skill-bar-percent">85%</span>
+			</div>
+			<div class="skill-bar-track">
+			  <div class="skill-bar-fill" style="--fill: 85%"></div>
+			</div>
+		  </div>
+		  <div class="skill-bar-item">
+			<div class="skill-bar-header">
+			  <span class="skill-bar-label">UI Design</span>
+			  <span class="skill-bar-percent">75%</span>
+			</div>
+			<div class="skill-bar-track">
+			  <div class="skill-bar-fill" style="--fill: 75%"></div>
+			</div>
+		  </div>
+		  <div class="skill-bar-item">
+			<div class="skill-bar-header">
+			  <span class="skill-bar-label">MySQL Database</span>
+			  <span class="skill-bar-percent">70%</span>
+			</div>
+			<div class="skill-bar-track">
+			  <div class="skill-bar-fill" style="--fill: 70%"></div>
+			</div>
+		  </div>
+		  <div class="skill-bar-item">
+			<div class="skill-bar-header">
+			  <span class="skill-bar-label">Networking</span>
+			  <span class="skill-bar-percent">65%</span>
+			</div>
+			<div class="skill-bar-track">
+			  <div class="skill-bar-fill" style="--fill: 65%"></div>
+			</div>
+		  </div>
+		  <div class="skill-bar-item">
+			<div class="skill-bar-header">
+			  <span class="skill-bar-label">Editing</span>
+			  <span class="skill-bar-percent">80%</span>
+			</div>
+			<div class="skill-bar-track">
+			  <div class="skill-bar-fill" style="--fill: 80%"></div>
+			</div>
+		  </div>
+		</div>
 
-        <!-- Stats -->
-        <div class="about-stats">
-          <div class="stat-box">
-            <h3>3+</h3>
-            <p>Projects Done</p>
-          </div>
-          <div class="stat-box">
-            <h3>2+</h3>
-            <p>Years Learning</p>
-          </div>
-          <div class="stat-box">
-            <h3>3+</h3>
-            <p>Skills Learned</p>
-          </div>
+		<div class="software-section">
+		  <p class="skills-label">Tools & Software:</p>
+		  <div class="software-list">
+			<div class="software-item">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+			  <span>HTML</span>
+			</div>
+			<div class="software-item">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+			  <span>CSS</span>
+			</div>
+			<div class="software-item">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" />
+			  <span>Photoshop</span>
+			</div>
+			<div class="software-item">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+			  <span>MySQL</span>
+			</div>
+			<div class="software-item">
+			  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+			  <span>Figma</span>
+			</div>
+			<div class="software-item">
+			  <img src="assets/cisco.jpg" alt="Cisco" />
+			  <span>Cisco</span>
+			</div>
+			<div class="software-item">
+			<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/canva.svg" alt="Canva" />
+			<span>Canva</span>
+			</div>
+		  </div>
+		</div>
+		<div class="about-stats">
+          <div class="stat-box"><h3>10+</h3><p>Projects Done</p></div>
+          <div class="stat-box"><h3>2+</h3><p>Years Learning</p></div>
+          <div class="stat-box"><h3>5+</h3><p>Skills Learned</p></div>
         </div>
-
-        <!-- Experience -->
         <p class="about-experience">
           I have worked on several academic and personal projects such as website
           designs, creative digital projects, and problem-solving activities that
           strengthened my technical and creative skills.
         </p>
-
-        <!-- Call to Action -->
         <a href="portfolio.html" class="btn-main">View My Work &rarr;</a>
-
       </div>
-
     </div>
   </section>
-  
-<footer>
-	<img src="assets/kentlogo.png" alt="KA Logo" class="footer-logo">
-	<div class="footer-container">
-	  <p class="footer-copy">
-        &copy; 2026 <span>Kent Alejo</span>. All Rights Reserved.
-      </p>
+
+  <footer>
+    <div class="footer-container">
+      <p class="footer-copy">&copy; 2026 <span>Kent Alejo</span>. All Rights Reserved.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/share/1J2FxMRugB/" target="_blank" title="Facebook">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
         <a href="https://www.instagram.com/3nt._k?igsh=MWI5YTA0Ym8wZHk2bg==" target="_blank" title="Instagram">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.7)" stroke="none"/>
-          </svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.7)" stroke="none"/></svg>
         </a>
         <a href="https://www.linkedin.com/in/kent-joshua-alejo-45b6983bb" target="_blank" title="LinkedIn">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.7)" stroke="none"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
         <a href="mailto:kentjoshuaalejo9@gmail.com" title="Gmail">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  
-  
-    <script>
-	const btn = document.getElementById('theme-btn');
+  <script>
+    /* ── Particles ── */
+    (function () {
+      const canvas  = document.getElementById('particles-about');
+      const ctx     = canvas.getContext('2d');
+      const section = document.getElementById('about');
+      let particles = [];
+      const COUNT   = 55;
 
-    function applyTheme(mode) {
-      if (mode === 'light') {
-        document.body.classList.add('light-mode');
-        btn.innerHTML = '<span class="icon">🌙</span><span>Dark</span>';
-      } else {
-        document.body.classList.remove('light-mode');
-        btn.innerHTML = '<span class="icon">☀️</span><span>Light</span>';
+      function resize() {
+        canvas.width  = section.offsetWidth;
+        canvas.height = section.offsetHeight;
       }
+
+      function randomParticle() {
+        return {
+          x:     Math.random() * canvas.width,
+          y:     Math.random() * canvas.height,
+          r:     Math.random() * 2 + 0.5,
+          dx:    (Math.random() - 0.5) * 0.4,
+          dy:    (Math.random() - 0.5) * 0.4,
+          alpha: Math.random() * 0.5 + 0.1
+        };
+      }
+
+      function init() {
+        resize();
+        particles = Array.from({ length: COUNT }, randomParticle);
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(59, 130, 246, ${p.alpha})`;
+          ctx.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        });
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(59, 130, 246, ${0.12 * (1 - dist / 120)})`;
+              ctx.lineWidth   = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', init);
+      init();
+      draw();
+    })();
+
+    /* ── Theme ── */
+    const btn = document.getElementById('theme-btn');
+    function applyTheme(mode) {
+      if (mode === 'light') { document.body.classList.add('light-mode'); btn.innerHTML = '<span class="icon">🌙</span><span>Dark</span>'; }
+      else { document.body.classList.remove('light-mode'); btn.innerHTML = '<span class="icon">☀️</span><span>Light</span>'; }
       localStorage.setItem('theme', mode);
     }
-
-    function toggleTheme() {
-      const current = localStorage.getItem('theme') || 'dark';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    }
-
-    /* Apply saved theme on load */
+    function toggleTheme() { applyTheme(localStorage.getItem('theme') === 'dark' ? 'light' : 'dark'); }
     applyTheme(localStorage.getItem('theme') || 'dark');
 
-		/* ── Hamburger menu ── */
-	function toggleMenu() {
-	  const nav = document.getElementById('nav-links');
-	  const btn = document.getElementById('hamburger-btn');
-	  nav.classList.toggle('open');
-	  btn.classList.toggle('active');
-	 }
+    /* ── Hamburger ── */
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+      document.getElementById('hamburger-btn').classList.toggle('active');
+    }
 	
-	</script>
+	/* ── Navbar scroll effect ── */
+	window.addEventListener('scroll', () => {
+	  const nav = document.querySelector('nav');
+	  if (window.scrollY > 10) {
+		nav.style.boxShadow = '0 4px 24px rgba(59,130,246,0.15)';
+		nav.style.backdropFilter = 'blur(10px)';
+		nav.style.background = 'rgba(17,17,17,0.85)';
+	  } else {
+		nav.style.boxShadow = '';
+		nav.style.backdropFilter = '';
+		nav.style.background = '';
+	  }
+	});
 
+	/* ── Page Transition ── */
+	document.querySelectorAll('a[href]').forEach(link => {
+	  const href = link.getAttribute('href');
+	  if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('http')) return;
+	  link.addEventListener('click', e => {
+		e.preventDefault();
+		document.body.classList.add('page-exit');
+		setTimeout(() => { window.location.href = href; }, 380);
+	  });
+	});
+  
+  
+  </script>
 </body>
 </html>
